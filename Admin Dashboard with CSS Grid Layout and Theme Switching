@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <style>
+    :root {
+      --header-bg: #4CAF50;
+      --sidebar-bg: #f4f4f4;
+      --content-bg: #fff;
+      --footer-bg: #4CAF50;
+      --text-color: #000;
+      --link-color: purple;
+    }
+
+    body.dark {
+      --header-bg: #333;
+      --sidebar-bg: #222;
+      --content-bg: #111;
+      --footer-bg: #222;
+      --text-color: #fff;
+      --link-color: #8888ff;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text-color);
+      background-color: var(--content-bg);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100vh;
+    }
+
+    header {
+      background: var(--header-bg);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+
+    .theme-switch {
+      color: white;
+      font-size: 0.9em;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      height: 100%;
+    }
+
+    nav {
+      background: var(--sidebar-bg);
+      padding: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav li a {
+      text-decoration: underline;
+      color: var(--link-color);
+      display: block;
+      margin: 10px 0;
+    }
+
+    main {
+      background: var(--content-bg);
+      padding: 20px;
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <label class="theme-switch">
+      <input type="checkbox" id="modeToggle"> Dark Mode
+    </label>
+  </header>
+
+  <div class="dashboard">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Users</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2>Welcome, Admin!</h2>
+      <p>This is the main content area. Add charts, tables, or reports here.</p>
+    </main>
+  </div>
+
+  <footer>
+    © 2025 Admin Panel
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('modeToggle');
+    toggle.addEventListener('change', function() {
+      document.body.classList.toggle('dark', this.checked);
+    });
+  </script>
+</body>
+</html>
