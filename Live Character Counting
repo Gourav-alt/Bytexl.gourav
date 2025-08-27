@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ 
+  <title>Character Counting</title>
+</head>
+<body>
+ <h2>Live Characters Counting:</h2><br>
+  <textarea placeholder="TYPE..." id="textinput"></textarea><br>
+  Character Counter: <span id="count" >0</span>
+</body>
+<script>
+  const textarea= document.getElementById('textinput');
+  const countObj=document.getElementById('count');
+  textarea.addEventListener('input',()=>{
+    countObj.textContent=textarea.value.length;
+  })
+</script>
+</html>
