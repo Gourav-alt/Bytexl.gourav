@@ -1,0 +1,38 @@
+import React from "react";
+import "./App.css";
+
+const products = [
+  { name: "Wireless Mouse", price: "$25.99", status: "In Stock" },
+  { name: "Keyboard", price: "$45.50", status: "Out of Stock" },
+  { name: "Monitor", price: "$199.99", status: "In Stock" },
+];
+
+const ProductCard = ({ name, price, status }) => {
+  return (
+    <div className="card">
+      <h2>{name}</h2>
+      <p>Price: {price}</p>
+      <p>Status: {status}</p>
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <div className="container">
+      <h1>Products List</h1>
+      <div className="card-list">
+        {products.map((product, index) => (
+          <ProductCard
+            key={index}
+            name={product.name}
+            price={product.price}
+            status={product.status}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default App;
